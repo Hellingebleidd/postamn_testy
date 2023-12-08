@@ -1,0 +1,703 @@
+{
+	"info": {
+		"_postman_id": "954ca49d-b96c-4909-bf33-aafaa355f355",
+		"name": "TRAVEL 2022",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "31634718-954ca49d-b96c-4909-bf33-aafaa355f355"
+	},
+	"item": [
+		{
+			"name": "KCP 1 osoba",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Má prejsť bez chyby\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"id": "3ab74d23-2905-4504-86e1-4752fab7eba8"
+					}
+				}
+			],
+			"id": "b710d73e-b102-43a8-b6dc-41a4ddf4d470",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "{{AMC_cookie}}",
+						"description": "Treba aktualizovať podľa AMC.",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "PrincipalID",
+						"value": "{{AMC_PrincipalID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accept\": false,\r\n    \"moduleCode\": \"TRAVEL_2022_MA\",\r\n    \"policyModel\": {\r\n        \"partners\": [],\r\n        \"policy\": {\r\n            \"package\": {\r\n                \"variantId\": \"01-kratkodobe\",\r\n                \"areaId\": \"01-eu-a-turecko\",\r\n                \"houseTariff\": true,\r\n                \"moduleCoverage\": \"03-max\",\r\n                \"tripCancellation\": \"06-storno\",\r\n                \"tripPrice\": 2000.123,\r\n                \"tripPayDate\": \"2023-05-25\",\r\n                \"luggage\": false,\r\n                \"risk\": false,\r\n                \"daysId\": null,\r\n                \"wholeYear\": false,\r\n                \"beginDate\": \"2023-12-25\",\r\n                \"endDate\": \"2023-12-30\",\r\n                \"discounts\": [\r\n                    1345\r\n                ]\r\n            },\r\n            \"insuredPersons\": {\r\n                \"numberAdults\": 1,\r\n                \"numberChildren\": 0,\r\n                \"numberSeniors\": 0\r\n            }\r\n        },\r\n        \"general\": {\r\n         \r\n         \r\n        },\r\n        \"owner\": {\r\n            \"cisr1\": \"00044500\",\r\n            \"email\": \"ja@doma.sk\",\r\n            \"telephone\": \"+421903123456\",\r\n            \"salesChannel\": \"4-ma-makleri\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AMC_calculation_url}}/calculate",
+					"host": [
+						"{{AMC_calculation_url}}"
+					],
+					"path": [
+						"calculate"
+					]
+				},
+				"description": "mala by prejsť kalkulácia"
+			},
+			"response": []
+		},
+		{
+			"name": "Celoročné poistenie",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Má prejsť bez chyby\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"id": "1a64fe5b-bdd5-4819-a644-43b04e55715b"
+					}
+				}
+			],
+			"id": "203fe983-b02e-466f-a55b-1d229824e228",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "{{AMC_cookie}}",
+						"description": "Treba aktualizovať podľa AMC.",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "PrincipalID",
+						"value": "{{AMC_PrincipalID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accept\": false,\r\n    \"moduleCode\": \"TRAVEL_2022_MA\",\r\n    \"policyModel\": {\r\n        \"partners\": [],\r\n        \"policy\": {\r\n            \"package\": {\r\n                \"variantId\": \"02-celorocne\",\r\n                \"areaId\": \"02-svet-okrem-sr\",\r\n                \"houseTariff\": false,\r\n                \"moduleCoverage\": \"03-max\",\r\n                //\"tripCancellation\": \"06-storno\",\r\n                ///\"tripPrice\": 2000.123,\r\n                //\"tripPayDate\": \"2023-05-25\",\r\n                \"luggage\": false,\r\n                \"risk\": false,\r\n                \"daysId\": \"01-90\",\r\n                \"wholeYear\": true,\r\n                \"beginDate\": \"2023-10-05\",\r\n                \"endDate\": \"2024-10-04\"\r\n            \r\n            },\r\n            \"insuredPersons\": {\r\n                \"numberAdults\": 1,\r\n                \"numberChildren\": 0,\r\n                \"numberSeniors\": 0\r\n            }\r\n        },\r\n        \"general\": {\r\n            \"rateDate\": \"2023-05-25\"\r\n        },\r\n        \"owner\": {\r\n            \"cisr1\": \"00044500\",\r\n            \"email\": \"ja@doma.sk\",\r\n            \"telephone\": \"+421903123456\",\r\n            \"salesChannel\": \"4-ma-makleri\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AMC_calculation_url}}/calculate",
+					"host": [
+						"{{AMC_calculation_url}}"
+					],
+					"path": [
+						"calculate"
+					]
+				},
+				"description": "mala by prejsť kalkulácia"
+			},
+			"response": []
+		},
+		{
+			"name": "Hory",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Má prejsť bez chyby\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"id": "d7c4a875-7983-4ea9-b5a6-23dda6cae24a"
+					}
+				}
+			],
+			"id": "d7205831-0f5d-40c2-a94d-70bd3c1ddc43",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "{{AMC_cookie}}",
+						"description": "Treba aktualizovať podľa AMC.",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "PrincipalID",
+						"value": "{{AMC_PrincipalID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"moduleCode\": \"TRAVEL_2022_MA\",\r\n    \"policyModel\": {\r\n        \"policy\": {\r\n            \"package\": {\r\n                \"variantId\": \"04-hory\",\r\n                \"areaId\": null,\r\n                \"area\": null,\r\n                \"houseTariff\": false,\r\n                \"moduleCoverage\": \"03-max\",\r\n                \"storno\": null,\r\n                \"stornoSpecial\": null,\r\n                \"tripCancellation\": \"00-no\",\r\n                \"tripPrice\": null,\r\n                \"tripPayDate\": null,\r\n                \"luggage\": false,\r\n                \"risk\": true,\r\n                \"daysId\": \"02-365\",\r\n                \"wholeYear\": true,\r\n                \"beginDate\": \"2023-03-28T12:01:36.098Z\",\r\n                \"endDate\": \"2024-03-27T01:00:00.000Z\",\r\n                \"discounts\": [],\r\n                \"tariffEmployerCode\": null,\r\n                \"tariffEmployeeCode\": null,\r\n                \"isContractDiscount\": false,\r\n                \"contractDiscount\": null,\r\n                \"businessDiscount\": null\r\n            },\r\n            \"insuredPersons\": {\r\n                \"numberAdults\": 1,\r\n                \"numberChildren\": 0,\r\n                \"numberSeniors\": 0,\r\n                \"insuredPolicyHolder\": true,\r\n                \"clients\": [\r\n                    {\r\n                        \"serialNumber\": 0,\r\n                        \"firstName\": \"Eva\",\r\n                        \"lastName\": \"Mosejová\",\r\n                        \"birthDate\": \"1966-05-15T11:00:00.000Z\",\r\n                        \"ageCategory\": null\r\n                    }\r\n                ]\r\n            },\r\n            \"paymentFrequency\": {\r\n                \"id\": \"99-jednorazovo\",\r\n                \"name\": \"Platené jednorazovo\",\r\n                \"code\": \"99\",\r\n                \"premiumInstallments\": 1\r\n            },\r\n            \"consents\": {\r\n                \"productConsent\": null,\r\n                \"marketingConsent\": false,\r\n                \"dek\": null,\r\n                \"ek\": null,\r\n                \"comission\": true,\r\n                \"confirmed\": null\r\n            },\r\n            \"authorizedPerson\": null\r\n        },\r\n        \"general\": {\r\n            \"ECO\": false,\r\n            \"ELA\": false,\r\n            \"lang\": \"sk\",\r\n            \"rateDate\": \"2023-03-28\",\r\n            \"quoteDate\": null,\r\n            \"signatureDate\": \"2023-03-28\",\r\n            \"beginDate\": \"2023-03-28\",\r\n            \"guaranteeDate\": null,\r\n            \"note\": null,\r\n            \"interventionCopy\": false,\r\n            \"insuranceTermsSendBy\": null,\r\n            \"clientVersion\": null,\r\n            \"paymentMethod\": null,\r\n            \"firstWayOfPayment\": {\r\n                \"bankTransfer\": true\r\n            },\r\n            \"nextWayOfPayment\": {\r\n                \"bankTransfer\": true\r\n            },\r\n            \"statement\": {\r\n                \"personalDataForMarketing\": false,\r\n                \"insuranceTermsSendBy\": null,\r\n                \"legitimateInterest\": false,\r\n                \"signedSamePerson\": false,\r\n                \"createAK\": false\r\n            },\r\n            \"endDate\": \"2024-03-27\"\r\n        },\r\n        \"partners\": [\r\n            {\r\n                \"id\": 0,\r\n                \"partnerType\": \"0\",\r\n                \"partner\": \"holder\",\r\n                \"bornNumber\": \"6655157190\",\r\n                \"birthDate\": \"1966-05-15T11:00:00.000Z\",\r\n                \"gender\": null,\r\n                \"salutation\": null,\r\n                \"lastName\": \"Mosejová\",\r\n                \"firstName\": \"Eva\",\r\n                \"bornName\": null,\r\n                \"email\": \"ekptest@allianz.sk\",\r\n                \"telephone\": \"+421948444233\",\r\n                \"regNumber\": null,\r\n                \"companyName\": null,\r\n                \"birthPlace\": null,\r\n                \"nationalities\": [],\r\n                \"address1\": {\r\n                    \"street\": \"Dubová\",\r\n                    \"streetNo1\": \"250\",\r\n                    \"streetNo2\": \"28\",\r\n                    \"country\": {\r\n                        \"code\": \"SK\",\r\n                        \"name\": \"Slovenská republika\"\r\n                    },\r\n                    \"zip\": \"04431\",\r\n                    \"city\": \"Sokoľ\",\r\n                    \"zuj\": null,\r\n                    \"region\": null\r\n                },\r\n                \"address2\": null,\r\n                \"idCard\": {\r\n                    \"type\": null,\r\n                    \"number\": null\r\n                },\r\n                \"titleBefore\": null,\r\n                \"titleAfter\": null,\r\n                \"subjectType\": \"holder\",\r\n                \"lastValidSearch\": {\r\n                    \"params\": {\r\n                        \"type\": \"person\",\r\n                        \"bornNumber\": \"6655157190\",\r\n                        \"surname\": \"Mosejová\"\r\n                    },\r\n                    \"infodata\": [\r\n                        {\r\n                            \"id\": \"general_labels.name\",\r\n                            \"name\": \"Eva\"\r\n                        },\r\n                        {\r\n                            \"id\": \"general_labels.surname\",\r\n                            \"name\": \"Mosejová\"\r\n                        },\r\n                        {\r\n                            \"id\": \"general_labels.phone\",\r\n                            \"name\": \"+421948444233\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"partnerId\": 856651817,\r\n                \"ptsSearch\": {\r\n                    \"partnerId\": 856651817,\r\n                    \"firstName\": \"Eva\",\r\n                    \"lastName\": \"Mosejová\",\r\n                    \"bornNumber\": \"6655157190\",\r\n                    \"email\": null,\r\n                    \"telephone\": \"+421948444233\"\r\n                },\r\n                \"finstat\": null,\r\n                \"dekData\": {\r\n                    \"surname\": \"Mosejová\",\r\n                    \"emailEk\": \"ekptest@allianz.sk\",\r\n                    \"ekType\": \"Všetky PZ\",\r\n                    \"acSegment\": 3,\r\n                    \"dekValid\": true,\r\n                    \"masterAgreementMail\": \"ekptest@allianz.sk\",\r\n                    \"masterAgreementMobile\": \"+421948444233\",\r\n                    \"mobileEk\": \"+421948444233\",\r\n                    \"agentSourceId\": 2,\r\n                    \"approvals\": \"OZ,MKT\",\r\n                    \"hasMarketingApproval\": true,\r\n                    \"hasNotificationApproval\": false,\r\n                    \"hasOzApproval\": true,\r\n                    \"agentSource\": \"Komplexný prístup\",\r\n                    \"personalNumber\": \"6655157190\"\r\n                },\r\n                \"dek\": true\r\n            }\r\n        ],\r\n        \"owner\": {\r\n            \"cisr1\": \"00044500\",\r\n            \"cisr2\": null,\r\n            \"email\": \"ja@doma.sk\",\r\n            \"telephone\": \"+421903123456\",\r\n            \"salesChannel\": \"4-ma-makleri\",\r\n            \"businessName\": \"Testovaci makler\",\r\n            \"address1\": \"Dostojevského rad 4, 815 74 Bratislava\",\r\n            \"legalForm\": \"s.r.o\",\r\n            \"registrationNumber\": \"00044500\",\r\n            \"brokerNo\": null,\r\n            \"name\": \"Agent\",\r\n            \"surname\": \"Testovač\",\r\n            \"urlLink\": null,\r\n            \"ratio\": null\r\n        }\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AMC_calculation_url}}/calculate",
+					"host": [
+						"{{AMC_calculation_url}}"
+					],
+					"path": [
+						"calculate"
+					]
+				},
+				"description": "mala by prejsť kalkulácia"
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Má prejsť bez chyby\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var template = `\r",
+							"    <style type=\"text/css\">\r",
+							"        .tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"        .tftable th {font-size:10px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"        .tftable tr {background-color:#ffffff;}\r",
+							"        .tftable tr:hover {background-color:#e0ffff;}\r",
+							"    </style>\r",
+							"    \r",
+							"    <h4>vehicles().package.summary</h4>\r",
+							"    <table class=\"tftable\" border=\"1\">\r",
+							"        <tr>\r",
+							"            <th>vin</th>\r",
+							"            <th>moduleCoverage</th>\r",
+							"            <th>basePremium</th>\r",
+							"            <th>premium</th>\r",
+							"            <th>premiumProrata</th>\r",
+							"            <th>termPremium</th>\r",
+							"            <th>termProrataPremium</th>\r",
+							"            <th>errors</th>\r",
+							"        </tr>\r",
+							"        \r",
+							"        {{#each response.policyModel.vehicles}}\r",
+							"            <tr id=row_{{@key}} onClick=\"handleClick(this.id)\">\r",
+							"                <td id={{@key}}>{{vin}}</td>\r",
+							"                <td>{{package.summary.moduleCoverage}}</td>\r",
+							"                <td>{{package.summary.basePremium}}</td>\r",
+							"                <td>{{package.summary.premium}}</td>\r",
+							"                <td>{{package.summary.premiumProrata}}</td>\r",
+							"                <td>{{package.summary.termPremium}}</td>\r",
+							"                <td>{{package.summary.termProrataPremium}}</td>\r",
+							"                <td>{{package.summary.errors}}</td>\r",
+							"            </tr>\r",
+							"        {{/each}}\r",
+							"    </table>\r",
+							"\r",
+							"    <h4>debugInfo</h4>\r",
+							"    <table class=\"tftable\" border=\"1\">\r",
+							"        <tr>\r",
+							"            <th>totalTimeSice</th>\r",
+							"            <th>timeRadar</th>\r",
+							"        </tr>\r",
+							"        \r",
+							"        {{#each response.policyModel.debugInfo.allCalc}}\r",
+							"            <tr id=row_{{@key}} onClick=\"handleClick(this.id)\">\r",
+							"                <td>{{t20-totalTimeSice}}</td>\r",
+							"                <td>{{t09-timeRadar}}</td>\r",
+							"            </tr>\r",
+							"        {{/each}}\r",
+							"    </table>\r",
+							"`;\r",
+							"\r",
+							"pm.visualizer.set(template, {\r",
+							"    response: pm.response.json()\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "285aa426-62be-48d5-be13-1558c2eb2a6b"
+					}
+				}
+			],
+			"id": "1d8cc4bb-4c5f-4264-a05c-6b8c02b8ad95",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "{{AMC_cookie}}",
+						"description": "Treba aktualizovať podľa AMC.",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "PrincipalID",
+						"value": "{{AMC_PrincipalID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AMC_rest_service}}/greenbox/cestovne/definition",
+					"host": [
+						"{{AMC_rest_service}}"
+					],
+					"path": [
+						"greenbox",
+						"cestovne",
+						"definition"
+					]
+				},
+				"description": "mala by prejsť kalkulácia"
+			},
+			"response": []
+		},
+		{
+			"name": "KCP 1 osoba PARAM",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Má prejsť bez chyby\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"id": "914c6ec2-ec3c-4372-a893-1a13bb002b11"
+					}
+				}
+			],
+			"id": "357291ab-fd15-48cc-a1d0-bbd2fd1e4889",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "{{AMC_cookie}}",
+						"description": "Treba aktualizovať podľa AMC.",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "PrincipalID",
+						"value": "{{AMC_PrincipalID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accept\": false,\r\n    \"moduleCode\": \"TRAVEL_2022_MA\",\r\n    \"policyModel\": {\r\n        \"partners\": [],\r\n        \"policy\": {\r\n            \"package\": {\r\n                \"variantId\": \"01-kratkodobe\",\r\n                \"areaId\": \"01-eu-a-turecko\",\r\n                \"houseTariff\": true,\r\n                \"moduleCoverage\": \"03-max\",\r\n                \"tripCancellation\": \"00-no\",\r\n                \"tripPrice\": null,\r\n                \"tripPayDate\": {{TRIP_PAY_DATE}},\r\n                \"luggage\": false,\r\n                \"risk\": false,\r\n                \"daysId\": null,\r\n                \"wholeYear\": false,\r\n                \"beginDate\": {{BEGIN_DATE}},\r\n                \"endDate\": {{END_DATE}},\r\n                \"discounts\": [\r\n                    1345\r\n                ]\r\n            },\r\n            \"insuredPersons\": {\r\n                \"numberAdults\": 1,\r\n                \"numberChildren\": 0,\r\n                \"numberSeniors\": 0\r\n            }\r\n        },\r\n        \"general\": {\r\n            \r\n        },\r\n        \"owner\": {\r\n            \"cisr1\": \"00044500\",\r\n            \"email\": \"ja@doma.sk\",\r\n            \"telephone\": \"+421903123456\",\r\n            \"salesChannel\": \"4-ma-makleri\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AMC_calculation_url}}/calculate",
+					"host": [
+						"{{AMC_calculation_url}}"
+					],
+					"path": [
+						"calculate"
+					]
+				},
+				"description": "mala by prejsť kalkulácia"
+			},
+			"response": []
+		},
+		{
+			"name": "KCP createPolicy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Má prejsť bez chyby\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"id": "6d9e0c14-902f-4ca5-ad5a-c28fedb6eb46"
+					}
+				}
+			],
+			"id": "40aaa088-5025-4560-9d0c-8a02b435700f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "{{AMC_cookie}}",
+						"description": "Treba aktualizovať podľa AMC.",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "PrincipalID",
+						"value": "{{AMC_PrincipalID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accept\": true,\r\n    \"moduleCode\": \"TRAVEL_2022_MA\",\r\n    \"policyModel\": {\r\n        \"partners\": [\r\n            {\r\n                \"id\": 0,\r\n                \"partnerType\": \"2\",\r\n                \"partner\": \"sandokan\",\r\n                \"bornNumber\": \"8804059999\",\r\n                \r\n               // \"birthDate\": \"1988-04-05\",\r\n                \"gender\": null,\r\n                \"salutation\": {\r\n                    \"id\": 1,\r\n                    \"name\": \"Pán\"\r\n                },\r\n                \"lastName\": \"Test\",\r\n                \"firstName\": \"Tester\",\r\n                \"bornName\": null,\r\n                \"email\": \"mail@mail.sk\",\r\n                \"telephone\": \"+421902555555\",\r\n                \"regNumber\": \"46761934\",\r\n                \"companyName\": \"Zuzana\",\r\n                \"birthPlace\": null,\r\n                \"nationalities\": [],\r\n                \"address1\": {\r\n                    \"street\": \"Mojš\",\r\n                    \"streetNo1\": null,\r\n                    \"streetNo2\": \"11\",\r\n                    \"country\": {\r\n                        \"code\": \"SK\",\r\n                        \"name\": \"Slovenská republika\"\r\n                    },\r\n                    \"zip\": \"01001\",\r\n                    \"city\": \"Mojš\"\r\n                },\r\n                \"address2\": null,\r\n                \"idCard\": {\r\n                    \"type\": null,\r\n                    \"number\": null\r\n                },\r\n                \"titleBefore\": null,\r\n                \"titleAfter\": null,\r\n                \"subjectType\": \"holder\"\r\n            }\r\n        ],\r\n        \"policy\": {\r\n            \"timeOutInterval\": 5000,\r\n            \"package\": {\r\n                \"variantId\": \"01-kratkodobe\",\r\n                \"areaId\": \"01-eu-a-turecko\",\r\n                \"area\": {\r\n                    \"id\": \"01-eu-a-turecko\"\r\n                },\r\n                \"houseTariff\": false,\r\n                \"moduleCoverage\": \"03-max\",\r\n                \"tripCancellation\": \"00-no\",\r\n                \"tripPrice\": null,\r\n                \"tripPayDate\": null,\r\n                \"luggage\": false,\r\n                \"risk\": false,\r\n                \"daysId\": null,\r\n                \"wholeYear\": false,\r\n                \"beginDate\": {{BEGIN_DATE}},\r\n                \"endDate\": {{END_DATE}},\r\n                \"discounts\": []\r\n            },\r\n            \"insuredPersons\": {\r\n                \"numberAdults\": 1,\r\n                \"numberChildren\": 0,\r\n                \"numberSeniors\": 0,\r\n                \"insuredPolicyHolder\": true\r\n            },\r\n            \"paymentFrequency\": {\r\n                \"code\": \"02\",\r\n                \"premiumInstallments\": 1,\r\n                \"name\": \"Ročne\",\r\n                \"id\": \"02-rocne\"\r\n            },\r\n            \"consents\": {\r\n                \"ek\": true,\r\n                \"productConsent\": true,\r\n                \"comission\": true,\r\n                \"marketingConsent\": false,\r\n                \"dek\": null,\r\n                \"confirmed\": null\r\n            }\r\n        },\r\n        \"general\": {\r\n           \"beginDate\":{{BEGIN_DATE}},\r\n           \"//signatureDate\": \"2023-05-29T13:43:17\"\r\n        },\r\n        \"owner\": {\r\n            \"cisr1\": \"00044500\",\r\n            \"email\": \"ja@doma.sk\",\r\n            \"telephone\": \"+421903123456\",\r\n        }\r\n    },\r\n    \"ecoSendMail\": false,\r\n    \"ecoAttachment\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AMC_calculation_url}}/createPolicy",
+					"host": [
+						"{{AMC_calculation_url}}"
+					],
+					"path": [
+						"createPolicy"
+					]
+				},
+				"description": "mala by prejsť kalkulácia"
+			},
+			"response": []
+		},
+		{
+			"name": "KCP calculate chybny endDate (viac ako 90dní)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Má byť chyba\", function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"// dopln cestu\r",
+							"const jsonData = pm.response.json();\r",
+							"const productData = jsonData.policyModel;\r",
+							"\r",
+							"pm.test(\"error wrong date\", function () {\r",
+							"    pm.expect(jsonData.errors[0].path).to.eql(\"policy.endDate\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "7ebfbb92-61f3-474b-9977-d7e5fc74681b"
+					}
+				}
+			],
+			"id": "18528bb7-d4c5-4595-876f-c0fbdefa7165",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "{{AMC_cookie}}",
+						"description": "Treba aktualizovať podľa AMC.",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "PrincipalID",
+						"value": "{{AMC_PrincipalID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accept\": false,\r\n    \"moduleCode\": \"TRAVEL_2022_MA\",\r\n    \"policyModel\": {\r\n        \"partners\": [\r\n            {\r\n                \"id\": 0,\r\n                \"partnerType\": \"0\",\r\n                \"partner\": \"holder\",\r\n                \"bornNumber\": \"8804059999\",\r\n                \"birthDate\": \"1988-04-05\",\r\n                \"gender\": null,\r\n                \"salutation\": {\r\n                    \"id\": 1,\r\n                    \"name\": \"Pán\"\r\n                },\r\n                \"lastName\": \"Test\",\r\n                \"firstName\": \"Tester\",\r\n                \"bornName\": null,\r\n                \"email\": \"mail@mail.sk\",\r\n                \"telephone\": \"+421902555555\",\r\n                \"regNumber\": null,\r\n                \"companyName\": null,\r\n                \"birthPlace\": null,\r\n                \"nationalities\": [],\r\n                \"address1\": {\r\n                    \"street\": \"Mojš\",\r\n                    \"streetNo1\": null,\r\n                    \"streetNo2\": \"11\",\r\n                    \"country\": {\r\n                        \"code\": \"SK\",\r\n                        \"name\": \"Slovenská republika\"\r\n                    },\r\n                    \"zip\": \"01001\",\r\n                    \"city\": \"Mojš\",\r\n                    \"zuj\": \"517801\",\r\n                    \"region\": \"ZA\"\r\n                },\r\n                \"address2\": null,\r\n                \"idCard\": {\r\n                    \"type\": null,\r\n                    \"number\": null\r\n                },\r\n                \"titleBefore\": null,\r\n                \"titleAfter\": null,\r\n                \"subjectType\": \"holder\"\r\n            }\r\n        ],\r\n        \"policy\": {\r\n            \"timeOutInterval\": 5000,\r\n            \"package\": {\r\n                \"variantId\": \"01-kratkodobe\",\r\n                \"areaId\": \"01-eu-a-turecko\",\r\n                \"area\": {\r\n                    \"id\": \"01-eu-a-turecko\"\r\n                },\r\n                \"houseTariff\": false,\r\n                \"moduleCoverage\": \"03-max\",\r\n                \"tripCancellation\": \"00-no\",\r\n                \"tripPrice\": null,\r\n                \"tripPayDate\": null,\r\n                \"luggage\": false,\r\n                \"risk\": false,\r\n                \"daysId\": null,\r\n                \"wholeYear\": false,\r\n                \"beginDate\": \"2023-05-09\",\r\n                \"endDate\": \"2023-10-09\",\r\n                \"discounts\": []\r\n            },\r\n            \"insuredPersons\": {\r\n                \"numberAdults\": 1,\r\n                \"numberChildren\": 0,\r\n                \"numberSeniors\": 0,\r\n                \"insuredPolicyHolder\": true\r\n            },\r\n            \"paymentFrequency\": {\r\n                \"code\": \"02\",\r\n                \"premiumInstallments\": 1,\r\n                \"name\": \"Ročne\",\r\n                \"id\": \"02-rocne\"\r\n            },\r\n            \"consents\": {\r\n                \"ek\": true,\r\n                \"productConsent\": true,\r\n                \"comission\": true,\r\n                \"marketingConsent\": false,\r\n                \"dek\": null,\r\n                \"confirmed\": null\r\n            }\r\n        },\r\n        \"general\": {\r\n            \"beginDate\": \"2023-05-06\",\r\n            \"rateDate\": \"2023-05-09\" \r\n            },\r\n        \"owner\": {\r\n            \"cisr1\": \"00044500\",\r\n            \"email\": \"ja@doma.sk\",\r\n            \"telephone\": \"+421903123456\"\r\n        }\r\n    },\r\n    \"ecoSendMail\": false,\r\n    \"ecoAttachment\": true\r\n}\r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AMC_calculation_url}}/calculate",
+					"host": [
+						"{{AMC_calculation_url}}"
+					],
+					"path": [
+						"calculate"
+					]
+				},
+				"description": "mala by prejsť kalkulácia"
+			},
+			"response": []
+		},
+		{
+			"name": "Storno calculate dobrý endDate (viac ako 90dní) Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Má prejsť bez chyby\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"id": "a4e21d38-fba5-4e80-9c88-fd0d81fb9fba"
+					}
+				}
+			],
+			"id": "27d4e0f8-88b5-4962-9ac4-c8f8f4b78288",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "{{AMC_cookie}}",
+						"description": "Treba aktualizovať podľa AMC.",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "PrincipalID",
+						"value": "{{AMC_PrincipalID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accept\": false,\r\n    \"moduleCode\": \"TRAVEL_2022_MA\",\r\n    \"policyModel\": {\r\n        \"partners\": [\r\n            {\r\n                \"id\": 0,\r\n                \"partnerType\": \"0\",\r\n                \"partner\": \"holder\",\r\n                \"bornNumber\": \"8804059999\",\r\n                \"birthDate\": \"1988-04-05\",\r\n                \"gender\": null,\r\n                \"salutation\": {\r\n                    \"id\": 1,\r\n                    \"name\": \"Pán\"\r\n                },\r\n                \"lastName\": \"Test\",\r\n                \"firstName\": \"Tester\",\r\n                \"bornName\": null,\r\n                \"email\": \"mail@mail.sk\",\r\n                \"telephone\": \"+421902555555\",\r\n                \"regNumber\": null,\r\n                \"companyName\": null,\r\n                \"birthPlace\": null,\r\n                \"nationalities\": [],\r\n                \"address1\": {\r\n                    \"street\": \"Mojš\",\r\n                    \"streetNo1\": null,\r\n                    \"streetNo2\": \"11\",\r\n                    \"country\": {\r\n                        \"code\": \"SK\",\r\n                        \"name\": \"Slovenská republika\"\r\n                    },\r\n                    \"zip\": \"01001\",\r\n                    \"city\": \"Mojš\",\r\n                    \"zuj\": \"517801\",\r\n                    \"region\": \"ZA\"\r\n                },\r\n                \"address2\": null,\r\n                \"idCard\": {\r\n                    \"type\": null,\r\n                    \"number\": null\r\n                },\r\n                \"titleBefore\": null,\r\n                \"titleAfter\": null,\r\n                \"subjectType\": \"holder\"\r\n            }\r\n        ],\r\n        \"policy\": {\r\n            \"timeOutInterval\": 5000,\r\n            \"package\": {\r\n                \"variantId\": \"03-storno\",\r\n                \"areaId\": \"01-eu-a-turecko\",\r\n                \"area\": {\r\n                    \"id\": \"01-eu-a-turecko\"\r\n                },\r\n                \"houseTariff\": false,\r\n                \"moduleCoverage\": \"06-storno\",\r\n                \"tripCancellation\": \"06-storno\",\r\n                \"tripPrice\": 10000,\r\n                \"tripPayDate\": \"2023-05-09\",\r\n                \"luggage\": false,\r\n                \"risk\": false,\r\n                \"daysId\": null,\r\n                \"wholeYear\": false,\r\n                \"beginDate\": \"2023-05-11\",\r\n                \"endDate\": \"2023-11-09\",\r\n                \"discounts\": []\r\n            },\r\n            \"insuredPersons\": {\r\n                \"numberAdults\": 1,\r\n                \"numberChildren\": 0,\r\n                \"numberSeniors\": 0,\r\n                \"insuredPolicyHolder\": true\r\n            },\r\n            \"paymentFrequency\": {\r\n                \"code\": \"02\",\r\n                \"premiumInstallments\": 1,\r\n                \"name\": \"Ročne\",\r\n                \"id\": \"02-rocne\"\r\n            },\r\n            \"consents\": {\r\n                \"ek\": true,\r\n                \"productConsent\": true,\r\n                \"comission\": true,\r\n                \"marketingConsent\": false,\r\n                \"dek\": null,\r\n                \"confirmed\": null\r\n            }\r\n        },\r\n        \"general\": {\r\n            \"beginDate\": \"2023-05-05\",\r\n            \"rateDate\": \"2023-05-09\" \r\n            },\r\n        \"owner\": {\r\n            \"cisr1\": \"00044500\",\r\n            \"email\": \"ja@doma.sk\",\r\n            \"telephone\": \"+421903123456\"\r\n        }\r\n    },\r\n    \"ecoSendMail\": false,\r\n    \"ecoAttachment\": true\r\n}\r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AMC_calculation_url}}/calculate",
+					"host": [
+						"{{AMC_calculation_url}}"
+					],
+					"path": [
+						"calculate"
+					]
+				},
+				"description": "mala by prejsť kalkulácia"
+			},
+			"response": []
+		},
+		{
+			"name": "Storno staré sadzby calculate dobrý endDate (viac ako 90dní)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Má prejsť bez chyby\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"id": "1e87d551-1e15-40aa-8e2b-11e26f9ae9e1"
+					}
+				}
+			],
+			"id": "8c584703-f050-4e87-9058-701ad03554da",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "{{AMC_cookie}}",
+						"description": "Treba aktualizovať podľa AMC.",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "PrincipalID",
+						"value": "{{AMC_PrincipalID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accept\": false,\r\n    \"moduleCode\": \"TRAVEL_2022_MA\",\r\n    \"policyModel\": {\r\n        \"partners\": [\r\n            {\r\n                \"id\": 0,\r\n                \"partnerType\": \"0\",\r\n                \"partner\": \"holder\",\r\n                \"bornNumber\": \"8804059999\",\r\n                \"birthDate\": \"1988-04-05\",\r\n                \"gender\": null,\r\n                \"salutation\": {\r\n                    \"id\": 1,\r\n                    \"name\": \"Pán\"\r\n                },\r\n                \"lastName\": \"Test\",\r\n                \"firstName\": \"Tester\",\r\n                \"bornName\": null,\r\n                \"email\": \"mail@mail.sk\",\r\n                \"telephone\": \"+421902555555\",\r\n                \"regNumber\": null,\r\n                \"companyName\": null,\r\n                \"birthPlace\": null,\r\n                \"nationalities\": [],\r\n                \"address1\": {\r\n                    \"street\": \"Mojš\",\r\n                    \"streetNo1\": null,\r\n                    \"streetNo2\": \"11\",\r\n                    \"country\": {\r\n                        \"code\": \"SK\",\r\n                        \"name\": \"Slovenská republika\"\r\n                    },\r\n                    \"zip\": \"01001\",\r\n                    \"city\": \"Mojš\",\r\n                    \"zuj\": \"517801\",\r\n                    \"region\": \"ZA\"\r\n                },\r\n                \"address2\": null,\r\n                \"idCard\": {\r\n                    \"type\": null,\r\n                    \"number\": null\r\n                },\r\n                \"titleBefore\": null,\r\n                \"titleAfter\": null,\r\n                \"subjectType\": \"holder\"\r\n            }\r\n        ],\r\n        \"policy\": {\r\n            \"timeOutInterval\": 5000,\r\n            \"package\": {\r\n                \"variantId\": \"03-storno\",\r\n                \"areaId\": \"01-eu-a-turecko\",\r\n                \"area\": {\r\n                    \"id\": \"01-eu-a-turecko\"\r\n                },\r\n                \"houseTariff\": false,\r\n                \"moduleCoverage\": \"06-storno\",\r\n                \"tripCancellation\": \"06-storno\",\r\n                \"tripPrice\": 10000,\r\n                \"tripPayDate\": \"2023-05-01\",\r\n                \"luggage\": false,\r\n                \"risk\": false,\r\n                \"daysId\": null,\r\n                \"wholeYear\": false,\r\n                \"beginDate\": \"2023-05-21\",\r\n                \"endDate\": \"2023-11-09\",\r\n                \"discounts\": []\r\n            },\r\n            \"insuredPersons\": {\r\n                \"numberAdults\": 1,\r\n                \"numberChildren\": 0,\r\n                \"numberSeniors\": 0,\r\n                \"insuredPolicyHolder\": true\r\n            },\r\n            \"paymentFrequency\": {\r\n                \"code\": \"02\",\r\n                \"premiumInstallments\": 1,\r\n                \"name\": \"Ročne\",\r\n                \"id\": \"02-rocne\"\r\n            },\r\n            \"consents\": {\r\n                \"ek\": true,\r\n                \"productConsent\": true,\r\n                \"comission\": true,\r\n                \"marketingConsent\": false,\r\n                \"dek\": null,\r\n                \"confirmed\": null\r\n            }\r\n        },\r\n        \"general\": {\r\n            \"beginDate\": \"2023-05-01\",\r\n            \"rateDate\": \"2023-05-01\" \r\n            },\r\n        \"owner\": {\r\n            \"cisr1\": \"00044500\",\r\n            \"email\": \"ja@doma.sk\",\r\n            \"telephone\": \"+421903123456\"\r\n        }\r\n    },\r\n    \"ecoSendMail\": false,\r\n    \"ecoAttachment\": true\r\n}\r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AMC_calculation_url}}/calculate",
+					"host": [
+						"{{AMC_calculation_url}}"
+					],
+					"path": [
+						"calculate"
+					]
+				},
+				"description": "mala by prejsť kalkulácia"
+			},
+			"response": []
+		},
+		{
+			"name": "getIpp",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Má prejsť bez chyby\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "453035ba-17e2-4476-a3d5-8ef9b9a131bb"
+					}
+				}
+			],
+			"id": "ff91293a-3448-4884-a5eb-b21624a9edb4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "PrincipalID",
+						"value": "{{AMC_PrincipalID}}",
+						"type": "text"
+					},
+					{
+						"key": "PrincipalID",
+						"value": "AZ00045523",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{AMC_wsApi_url}}/amc-rest-service/greenbox/v1/get-ipp/113537",
+					"host": [
+						"{{AMC_wsApi_url}}"
+					],
+					"path": [
+						"amc-rest-service",
+						"greenbox",
+						"v1",
+						"get-ipp",
+						"113537"
+					]
+				},
+				"description": "mala by prejsť kalkulácia"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// nastavím dnešný deň",
+					"let today = new Date().toISOString().slice(0, 10)",
+					"pm.globals.set(\"TODAY\", today);",
+					"",
+					"pm.collectionVariables.set(\"BEGIN_DATE\", today);",
+					"pm.collectionVariables.set(\"TRIP_PAY_DATE\", today);",
+					"let endDate = new Date();",
+					"endDate.setDate(endDate.getDate() + 10)",
+					"pm.collectionVariables.set(\"END_DATE\", endDate.toISOString().slice(0, 10));",
+					""
+				],
+				"id": "6adf20bd-11f1-4e22-b10e-d47833e024a8"
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "49208c3f-ab01-4b97-be99-b278fd283792"
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "7660a4dc-02b8-40a7-960c-e45de8cdc021",
+			"key": "BEGIN_DATE",
+			"value": ""
+		},
+		{
+			"id": "dff7624f-a864-45ff-b071-bd7b736cbc99",
+			"key": "TRIP_PAY_DATE",
+			"value": ""
+		},
+		{
+			"id": "a833db77-8e05-4829-83f8-7d9e2f0c71df",
+			"key": "END_DATE",
+			"value": ""
+		}
+	]
+}
