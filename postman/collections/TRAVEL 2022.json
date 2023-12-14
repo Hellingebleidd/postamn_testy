@@ -12,14 +12,14 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "3ab74d23-2905-4504-86e1-4752fab7eba8",
 						"exec": [
 							"pm.test(\"Má prejsť bez chyby\", function(){\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							""
 						],
-						"type": "text/javascript",
-						"id": "3ab74d23-2905-4504-86e1-4752fab7eba8"
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -45,7 +45,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"accept\": false,\r\n    \"moduleCode\": \"TRAVEL_2022_MA\",\r\n    \"policyModel\": {\r\n        \"partners\": [],\r\n        \"policy\": {\r\n            \"package\": {\r\n                \"variantId\": \"01-kratkodobe\",\r\n                \"areaId\": \"01-eu-a-turecko\",\r\n                \"houseTariff\": true,\r\n                \"moduleCoverage\": \"03-max\",\r\n                \"tripCancellation\": \"06-storno\",\r\n                \"tripPrice\": 2000.123,\r\n                \"tripPayDate\": \"2023-05-25\",\r\n                \"luggage\": false,\r\n                \"risk\": false,\r\n                \"daysId\": null,\r\n                \"wholeYear\": false,\r\n                \"beginDate\": \"2023-12-25\",\r\n                \"endDate\": \"2023-12-30\",\r\n                \"discounts\": [\r\n                    1345\r\n                ]\r\n            },\r\n            \"insuredPersons\": {\r\n                \"numberAdults\": 1,\r\n                \"numberChildren\": 0,\r\n                \"numberSeniors\": 0\r\n            }\r\n        },\r\n        \"general\": {\r\n         \r\n         \r\n        },\r\n        \"owner\": {\r\n            \"cisr1\": \"00044500\",\r\n            \"email\": \"ja@doma.sk\",\r\n            \"telephone\": \"+421903123456\",\r\n            \"salesChannel\": \"4-ma-makleri\"\r\n        }\r\n    }\r\n}",
+					"raw": "{\r\n    \"accept\": false,\r\n    \"moduleCode\": \"TRAVEL_2022_MA\",\r\n    \"policyModel\": {\r\n        \"partners\": [],\r\n        \"policy\": {\r\n            \"package\": {\r\n                \"variantId\": \"01-kratkodobe\",\r\n                \"areaId\": \"01-eu-a-turecko\",\r\n                \"houseTariff\": true,\r\n                \"moduleCoverage\": \"03-max\",\r\n                \"tripCancellation\": \"06-storno\",\r\n                \"tripPrice\": 2000.123,\r\n                \"tripPayDate\": \"2023-05-25\",\r\n                \"luggage\": false,\r\n                \"risk\": false,\r\n                \"daysId\": null,\r\n                \"wholeYear\": false,\r\n                \"beginDate\": \"2023-12-25\",\r\n                \"endDate\": \"2023-12-30\",\r\n                \"discounts\": [\r\n                    1345\r\n                ]\r\n            },\r\n            \"insuredPersons\": {\r\n                \"numberAdults\": 1,\r\n                \"numberChildren\": 0,\r\n                \"numberSeniors\": 0\r\n            }\r\n        },\r\n        \"general\": {\r\n         \r\n         \r\n        },\r\n        \"owner\": {\r\n            \"cisr1\": \"00044500\",\r\n            \"email\": \"zuzanka@zuzanka.sk\",\r\n            \"telephone\": \"+421903123456\",\r\n            \"salesChannel\": \"4-ma-makleri\"\r\n        }\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
